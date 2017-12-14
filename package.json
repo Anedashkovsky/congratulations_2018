@@ -1,5 +1,4 @@
 {
-
     "name": "congratulations_2018",
     "scripts": {
         "start": "node dist/app.js",
@@ -8,11 +7,13 @@
     },
     "version": "0.0.1",
     "author": "anedashkovsky",
-    "license": "GPLv3",
+    "license": "GPL",
     "dependencies": {
-        "@types/express": "^4.0.39",
-        "@types/node": "^8.5.1",
+        "@types/express": "~4.0.39",
+        "@types/mongoose": "~4.7.29",
+        "@types/node": "~8.5.1",
         "express": "4.16",
+        "mongoose": "4.13.7",
         "telegraf": "3.17",
         "typescript": "2.6"
     }
