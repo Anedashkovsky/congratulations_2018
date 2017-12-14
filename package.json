@@ -4,6 +4,8 @@
     "author": "anedashkovsky",
     "license": "GPLv3",
     "dependencies": {
+        "@types/express": "^4.0.39",
+        "@types/node": "^8.5.1",
         "express": "4.16",
         "telegraf": "3.17",
         "typescript": "2.6"
