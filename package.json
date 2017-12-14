@@ -1,5 +1,9 @@
 {
+
     "name": "congratulations_2018",
+    "scripts": {
+        "start": "node dist/app.js"
+    },
     "version": "0.0.1",
     "author": "anedashkovsky",
     "license": "GPLv3",
