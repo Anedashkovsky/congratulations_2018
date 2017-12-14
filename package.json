@@ -2,7 +2,9 @@
 
     "name": "congratulations_2018",
     "scripts": {
-        "start": "node dist/app.js"
+        "start": "node dist/app.js",
+        "compile": "./node_modules/.bin/tsc",
+        "postinstall": "yarn compile"
     },
     "version": "0.0.1",
     "author": "anedashkovsky",
