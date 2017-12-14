@@ -1,7 +1,11 @@
 {
     "name": "congratulations_2018",
     "version": "0.0.1",
+    "author": "anedashkovsky",
+    "license": "GPLv3",
     "dependencies": {
-        
+        "express": "4.16",
+        "telegraf": "3.17",
+        "typescript": "2.6"
     }
 }
