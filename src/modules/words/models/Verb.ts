@@ -3,8 +3,6 @@
  */
 import {Document, Schema} from 'mongoose';
 import {db} from '../../../components/db/mongoDb';
-const SchemaCreator = db.Schema;
-const model = db.model;
 
 interface VerbAttributes {
     text: string;
@@ -12,10 +10,10 @@ interface VerbAttributes {
 
 interface VerbModel extends Document, VerbAttributes {}
 
-const VerbSchema: Schema = new SchemaCreator({
+const VerbSchema: Schema = new db.Schema({
     text: String,
     gender: String
 });
 
-const Verb = model<VerbModel>('Verb', VerbSchema);
+const Verb = db.model<VerbModel>('Verb', VerbSchema);
 export {Verb, VerbAttributes};

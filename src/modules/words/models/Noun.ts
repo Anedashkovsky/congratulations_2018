@@ -4,8 +4,6 @@
 import {Document, Schema} from 'mongoose';
 import {db} from '../../../components/db/mongoDb';
 import {Gender} from '../constants/Gender';
-const SchemaCreator = db.Schema;
-const model = db.model;
 
 interface NounAttributes {
     text: string;
@@ -14,10 +12,10 @@ interface NounAttributes {
 
 interface NounModel extends Document, NounAttributes {}
 
-const NounSchema: Schema = new SchemaCreator({
+const NounSchema: Schema = new db.Schema({
     text: String,
     gender: String
 });
 
-const Noun = model<NounModel>('Noun', NounSchema);
+const Noun = db.model<NounModel>('Noun', NounSchema);
 export {Noun, NounAttributes};
