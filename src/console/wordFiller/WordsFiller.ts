@@ -29,11 +29,3 @@ class WordsFiller {
 }
 
 export {WordsFiller};
-
-if (!module.parent) {
-    (async() => {
-        const wordsFiller = new WordsFiller();
-        await wordsFiller.fill();
-        console.log('Db filled');
-    })();
-}
