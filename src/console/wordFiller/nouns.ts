@@ -1,5 +1,5 @@
-import {NounAttributes} from '../../modules/words/models/Noun';
-import {Gender} from '../../modules/words/constants/Gender';
+import {NounAttributes} from '../../modules/word/models/Noun';
+import {Gender} from '../../modules/word/constants/Gender';
 
 const nouns: NounAttributes[] = [
     {

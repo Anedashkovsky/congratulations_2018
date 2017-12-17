@@ -5,7 +5,7 @@ import {adjectives} from './adjectives';
 import {nouns} from './nouns';
 import {verbs} from './verbs';
 
-import {WordService} from '../../modules/words/services/WordService';
+import {WordService} from '../../modules/word/services/WordService';
 class WordsFiller {
     public async fill() {
         await Promise.all([

@@ -1,5 +1,5 @@
-import {AdjectiveAttributes} from '../../modules/words/models/Adjective';
-import {Gender} from '../../modules/words/constants/Gender';
+import {AdjectiveAttributes} from '../../modules/word/models/Adjective';
+import {Gender} from '../../modules/word/constants/Gender';
 
 const adjectives: AdjectiveAttributes[] = [
     {

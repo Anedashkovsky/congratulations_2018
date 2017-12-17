@@ -1,4 +1,4 @@
-import {VerbAttributes} from '../../modules/words/models/Verb';
+import {VerbAttributes} from '../../modules/word/models/Verb';
 
 const verbs: VerbAttributes[] = [
     {text: 'понюхать'},
