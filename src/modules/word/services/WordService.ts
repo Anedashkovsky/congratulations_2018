@@ -4,8 +4,27 @@
 import {Noun, NounAttributes} from '../models/Noun';
 import {Verb, VerbAttributes} from '../models/Verb';
 import {Adjective, AdjectiveAttributes} from '../models/Adjective';
+import {Gender} from '../constants/Gender';
 
 class WordService {
+    public static async getRandomNoun(): Promise<NounAttributes> {
+        const nounsCount = await WordService.getNounCount();
+        const skipAmount = Math.floor(Math.random() * nounsCount);
+        return Noun.findOne({}).skip(skipAmount).exec();
+    }
+
+    public static async getRandomVerb(): Promise<VerbAttributes> {
+        const verbsCount = await WordService.getVerbCount();
+        const skipAmount = Math.floor(Math.random() * verbsCount);
+        return Verb.findOne({}).skip(skipAmount).exec();
+    }
+
+    public static async getRandomAdjective(gender: Gender): Promise<AdjectiveAttributes> {
+        const adjectivesCount = await WordService.getAdjectiveCount(gender);
+        const skipAmount = Math.floor(Math.random() * adjectivesCount);
+        return Adjective.findOne({gender}).skip(skipAmount).exec();
+    }
+
     public static async createNoun(data: NounAttributes): Promise<NounAttributes> {
         return Noun.create(data);
     }
@@ -16,6 +35,18 @@ class WordService {
 
     public static async createAdjective(data: AdjectiveAttributes): Promise<AdjectiveAttributes> {
         return Adjective.create(data);
+    }
+
+    private static async getVerbCount(): Promise<number> {
+        return Verb.count({}).exec();
+    }
+
+    private static async getNounCount(): Promise<number> {
+        return Noun.count({}).exec();
+    }
+
+    private static async getAdjectiveCount(gender: Gender): Promise<number> {
+        return Adjective.count({gender}).exec();
     }
 }
 
