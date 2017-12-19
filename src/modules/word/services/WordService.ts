@@ -6,7 +6,25 @@ import {Verb, VerbAttributes} from '../models/Verb';
 import {Adjective, AdjectiveAttributes} from '../models/Adjective';
 import {Gender} from '../constants/Gender';
 
+interface PhraseWords {
+    noun: NounAttributes;
+    verb: VerbAttributes;
+    adjective: AdjectiveAttributes;
+}
+
 class WordService {
+    public static async getrandomWords(): Promise<PhraseWords> {
+        const [
+            verb,
+            noun
+        ] = await Promise.all([
+            WordService.getRandomVerb(),
+            WordService.getRandomNoun()
+        ]);
+        const adjective = await WordService.getRandomAdjective(noun.gender);
+        return {verb, noun, adjective};
+    }
+
     public static async getRandomNoun(): Promise<NounAttributes> {
         const nounsCount = await WordService.getNounCount();
         const skipAmount = Math.floor(Math.random() * nounsCount);

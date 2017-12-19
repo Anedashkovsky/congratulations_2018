@@ -7,11 +7,10 @@ const DELAY_INTERVAL = 1000 * 60 * 10; // 10 minutes
 
 class HeartBeatService {
     public static useHeartBeatFunction(): void {
-        const timer = setInterval(HeartBeatService.beat, DELAY_INTERVAL)
-        console.log(timer);
+        setInterval(HeartBeatService.beat, DELAY_INTERVAL);
     }
 
-    private static async beat() {
+    private static async beat(): Promise<void> {
         console.log('Heartbeat');
         await http.get(`http://${APP_NAME}.herokuapp.com/heartbeat`);
     }

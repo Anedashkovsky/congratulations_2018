@@ -7,15 +7,9 @@ import {PhraseAttributes, Phrase} from '../models/Phrase';
 
 class PhraseService {
     public static async getRandomPhrase(): Promise<string> {
-        const [
-            verb,
-            noun
-        ] = await Promise.all([
-            WordService.getRandomVerb(),
-            WordService.getRandomNoun()
-        ]);
-        const adjective = await WordService.getRandomAdjective(noun.gender);
-        return `${PhraseService.getPhraseBeginning()} ${verb} ${adjective} ${noun}`;
+        const phraseWords = await WordService.getrandomWords();
+        const {adjective, noun, verb} = phraseWords;
+        return `${PhraseService.getPhraseBeginning()} ${verb.text} ${adjective.text} ${noun.text}`;
     }
 
     public static async create(data: PhraseAttributes): Promise<PhraseAttributes> {

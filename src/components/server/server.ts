@@ -7,6 +7,9 @@ const expressApp = Express();
 import {router as keepaliveRouter, HeartBeatService} from '../../modules/keepalive';
 expressApp.use('/', keepaliveRouter);
 
+import {router as phraseRouter} from '../../modules/phrase';
+expressApp.use('/', phraseRouter);
+
 // catch 404 and forward to error handler
 expressApp.use(function(req, res) {
     console.log(`Route not found: ${req.url}`);
