@@ -10,19 +10,19 @@ class WordService {
     public static async getRandomNoun(): Promise<NounAttributes> {
         const nounsCount = await WordService.getNounCount();
         const skipAmount = Math.floor(Math.random() * nounsCount);
-        return Noun.findOne({}).skip(skipAmount).exec();
+        return Noun.findOne({}).skip(skipAmount).exec() as Promise<NounAttributes>;
     }
 
     public static async getRandomVerb(): Promise<VerbAttributes> {
         const verbsCount = await WordService.getVerbCount();
         const skipAmount = Math.floor(Math.random() * verbsCount);
-        return Verb.findOne({}).skip(skipAmount).exec();
+        return Verb.findOne({}).skip(skipAmount).exec() as Promise<VerbAttributes>;
     }
 
     public static async getRandomAdjective(gender: Gender): Promise<AdjectiveAttributes> {
         const adjectivesCount = await WordService.getAdjectiveCount(gender);
         const skipAmount = Math.floor(Math.random() * adjectivesCount);
-        return Adjective.findOne({gender}).skip(skipAmount).exec();
+        return Adjective.findOne({gender}).skip(skipAmount).exec() as Promise<AdjectiveAttributes>;
     }
 
     public static async createNoun(data: NounAttributes): Promise<NounAttributes> {
