@@ -4,6 +4,10 @@
 import * as Express from 'express';
 const expressApp = Express();
 
+import * as bodyParser from 'body-parser';
+expressApp.use(bodyParser.urlencoded({ extended: false }));
+expressApp.use(bodyParser.json());
+
 import {router as keepaliveRouter, HeartBeatService} from '../../modules/keepalive';
 expressApp.use('/', keepaliveRouter);
 

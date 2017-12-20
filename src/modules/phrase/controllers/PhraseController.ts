@@ -14,7 +14,7 @@ class PhraseController {
     }
 
     public async actionCreate(request: Express.Request, response: Express.Response): Promise<void> {
-        const {text, author} = request.query;
+        const {text, author} = request.body;
         await PhraseService.create({
             text,
             author,
