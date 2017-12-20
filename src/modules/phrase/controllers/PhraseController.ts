@@ -10,7 +10,7 @@ class PhraseController {
     public async actionGetPhrase(request: Express.Request, response: Express.Response): Promise<void> {
         const result = await PhraseService.getRandomPhrase();
         response.contentType('application/json');
-        response.end({text: result});
+        response.send({text: result});
     }
 
     public async actionCreate(request: Express.Request, response: Express.Response): Promise<void> {
