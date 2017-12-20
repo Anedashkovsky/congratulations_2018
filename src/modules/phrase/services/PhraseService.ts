@@ -2,17 +2,17 @@
  * @fileoverview Phrase service
  */
 import {WordService} from '../../word';
-
+import {Type} from '../constants/PhraseType';
 import {PhraseAttributes, Phrase} from '../models/Phrase';
 
 class PhraseService {
-    public static async getRandomPhrase(): Promise<string> {
+    public static async getRandomPhrase(): Promise<PhraseAttributes> {
         const dbPhraseCount = await PhraseService.getPhrasesCount();
         let result;
         if (dbPhraseCount) {
             const getPhraseFromDb = Boolean(Math.floor(10 * Math.random()) <= 2);
             result = getPhraseFromDb ?
-                PhraseService.getDbRandomPhraseText() :
+                PhraseService.getDbRandomPhrase() :
                 PhraseService.generateRandomPhrase();
         } else {
             result = PhraseService.generateRandomPhrase();
@@ -24,15 +24,11 @@ class PhraseService {
         return Phrase.create(data);
     }
 
-    private static async generateRandomPhrase(): Promise<string> {
+    private static async generateRandomPhrase(): Promise<PhraseAttributes> {
         const phraseWords = await WordService.getrandomWords();
         const {adjective, noun, verb} = phraseWords;
-        return `${PhraseService.getPhraseBeginning()} ${verb.text} ${adjective.text} ${noun.text}`;
-    }
-
-    private static async getDbRandomPhraseText(): Promise<string> {
-        const phrase = await PhraseService.getDbRandomPhrase();
-        return `${phrase.author} желает Вам: ${phrase.text}`;
+        const text = `${verb.text} ${adjective.text} ${noun.text}`;
+        return {text, type: Type.GENERATED};
     }
 
     private static async getDbRandomPhrase(): Promise<PhraseAttributes> {
@@ -51,4 +47,4 @@ class PhraseService {
     }
 }
 
-export {PhraseService};
+export {PhraseService, PhraseAttributes};

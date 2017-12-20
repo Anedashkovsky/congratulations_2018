@@ -4,7 +4,7 @@ const router = Express.Router();
 import {PhraseController} from './PhraseController';
 const phraseController = new PhraseController();
 
-router.get('/phrase/random', phraseController.actionGetPhrase);
+router.get('/phrase/generated', phraseController.actionGetGeneratedPhrase);
 router.post('/phrase', phraseController.actionCreate);
 
 export {router};

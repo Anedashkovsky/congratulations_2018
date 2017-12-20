@@ -13,12 +13,10 @@ class BotService {
     }
 
     private static getGreeterString(daysToNewYear: number): string {
-        return `\
-            Hello!\n\
-            Before the new year is left ${daysToNewYear} days!\n\
-            You can get here new year congratulations.\n\
-            Or you can write your own here: http://path.to.landing/\
-        `;
+        return `Hello!\n` +
+            `Before the new year is left ${daysToNewYear} days!\n` +
+            `You can get here new year congratulations.\n` +
+            `Or you can write your own here: http://path.to.landing/`;
     }
 }
 

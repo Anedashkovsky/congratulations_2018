@@ -7,7 +7,7 @@ import {Type} from '../constants/PhraseType';
 import {PhraseService} from '../services/PhraseService';
 
 class PhraseController {
-    public async actionGetPhrase(request: Express.Request, response: Express.Response): Promise<void> {
+    public async actionGetGeneratedPhrase(request: Express.Request, response: Express.Response): Promise<void> {
         const result = await PhraseService.getRandomPhrase();
         response.contentType('application/json');
         response.send({text: result});

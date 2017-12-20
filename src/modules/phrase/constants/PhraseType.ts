@@ -3,8 +3,7 @@
  */
 enum Type {
     GENERATED = 'generated',
-    USER_TYPED = 'user-typed',
-    PARSED = 'parsed'
+    USER_TYPED = 'user-typed'
 }
 
 export {Type};
