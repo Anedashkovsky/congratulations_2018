@@ -11,5 +11,6 @@ const botController = new BotController();
 
 bot.start(botController.getGreeterMessage);
 bot.hears('hi', (context: any) => context.reply('Hey there!'));
+bot.command('get', botController.getRandomPhrase);
 
 export {bot};
