@@ -17,7 +17,7 @@ class PhraseService {
     }
 
     private static getPhraseBeginning(): string {
-        return 'Желаем Вам ';
+        return 'Желаем Вам';
     }
 }
 
