@@ -7,6 +7,7 @@ import {BotService} from '../services/BotService';
 class BotController {
     public getGreeterMessage(context: any): void {
         const  message = BotService.getGreetMessage();
+        console.log(context.session);
         return context.reply(message);
     }
 

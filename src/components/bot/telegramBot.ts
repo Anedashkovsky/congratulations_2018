@@ -6,6 +6,9 @@ const BOT_TOKEN = process.env.BOT_TOKEN;
 const Telegraf = require('telegraf');
 const bot = new Telegraf(BOT_TOKEN);
 
+const Session = require('telegraf/session');
+bot.use(Session());
+
 import {BotController} from '../../modules/bot/controllers/BotController';
 const botController = new BotController();
 
