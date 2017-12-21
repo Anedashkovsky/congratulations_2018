@@ -15,7 +15,7 @@ const GENERATE_PHRASE_COMMAND = 'Рубануть!';
 class BotController {
     public getGreeterMessage(context: any): void {
         const message = BotService.getGreetMessage();
-        const keyboard = Markup.keyboard(['GENERATE_PHRASE_COMMAND'])
+        const keyboard = Markup.keyboard([GENERATE_PHRASE_COMMAND])
             .resize()
             .extra();
         return context.reply(message, keyboard);
