@@ -2,7 +2,8 @@
     position: relative;
 
     font-family: 'Roboto Slab', serif;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 28px;
 }
 
 .form:after {
@@ -39,7 +40,7 @@
 }
 
 .interaction {
-    margin-top: 65px;
+    margin-top: 90px;
 }
 
 .textarea {
@@ -47,6 +48,8 @@
 
     width: 100%;
     padding-left: 20px;
+
+    box-sizing: border-box;
 
     color: #fff;
 
@@ -56,7 +59,8 @@
     border: 1px solid #f0a4c8;
 
     font-family: 'Roboto Slab', serif;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 28px;
 }
 
 .textarea:active, .textarea:hover, .textarea:focus {
@@ -65,7 +69,7 @@
 }
 
 .textarea_congratulation {
-    height: 135px;
+    height: 150px;
     padding-top: 15px;
 
     border-bottom: 0;
@@ -75,11 +79,11 @@
 }
 
 .textarea_author {
-    height: 40px;
+    height: 55px;
 
     border-radius: 0 0 10px 10px;
 
-    line-height: 40px;
+    line-height: 48px;
 }
 
 .interaction__button {

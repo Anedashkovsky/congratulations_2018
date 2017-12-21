@@ -5,8 +5,8 @@
 }
 
 .field {
-    padding-top: 235px;
-    margin-left: -55px;
+    padding: 235px 180px 0;
+    margin-left: -85px;
 
     transform: rotate(-12deg);
 
@@ -32,4 +32,7 @@
 
 .button__text {
     margin-top: 20px;
+
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
 }
