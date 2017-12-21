@@ -11,8 +11,6 @@ class Genarator extends React.Component {
         this.state = {
             text: ''
         };
-
-        this.xhr = new XMLHttpRequest();
     }
 
     render() {

@@ -6,18 +6,72 @@ html, body {
 }
 
 .home {
+    position: relative;
+
     height: 100%;
     width: 100%;
-    padding-bottom: 60px;
+    padding-bottom: 380px;
 
     color: #fff;
 
     background: #1F3D95;
-    background: radial-gradient(farthest-side at 50% 20%, #1F3D95, #700651 230%);
+    background: radial-gradient(farthest-side at 50% 20%, #1F3D95, #700651 210%);
 }
 
 .content {
     width: 850px;
     min-width: 320px;
     margin: 0 auto;
+}
+
+.tree__img_left {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 338px;
+}
+
+.tree__img_right {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 338px;
+
+    transform: scale(-1, 1);
+}
+
+.tree__img_main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 236px;
+    margin: auto;
+}
+
+.garland__img_top {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+}
+
+.garland__img_bottom {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+}
+
+.tree__img_bottom {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+
+    width: 259px;
+    margin: auto;
 }
