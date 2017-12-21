@@ -8,15 +8,12 @@ import styles from './styles.css';
 class Home extends React.Component {
     render() {
         const generator = this.renderGenerator();
-        // const botInfo = this.renderBotInfo();
         const form = this.renderForm();
 
         return (
             <div className={styles.home}>
-                {generator}
-
-                <div className={styles.interaction_board}>
-                    {/* {botInfo} */}
+                <div className={styles.content}>
+                    {generator}
                     {form}
                 </div>
             </div>
@@ -25,23 +22,15 @@ class Home extends React.Component {
 
     renderGenerator() {
         return (
-            <div className="home__generator">
+            <div className={styles.generator}>
                 <Generator />
             </div>
         );
     }
 
-    // renderBotInfo() {
-    //     return (
-    //         <div className="home__bot-info">
-    //             <BotInfo />
-    //         </div>
-    //     );
-    // }
-
     renderForm() {
         return (
-            <div className="home__form">
+            <div className={styles.form}>
                 <Form />
             </div>
         );

@@ -9,7 +9,7 @@ class Genarator extends React.Component {
         super(props)
 
         this.state = {
-            text: 'С Наступающим Новым годом!'
+            text: ''
         };
 
         this.xhr = new XMLHttpRequest();
@@ -27,10 +27,14 @@ class Genarator extends React.Component {
         );
     }
 
+    componentWillMount() {
+        this.updateText();
+    }
+
     renderTextField() {
         return (
             <div className={styles.field}>
-                {this.state.text}
+                Желаем в Новом году {this.state.text}
             </div>
         );
     }
@@ -42,7 +46,7 @@ class Genarator extends React.Component {
 
                 <img className={styles.button__img} src={ball}/>
                 <div className={styles.button__text}>
-                    получить новое пожелание
+                    сгенерировать новое пожелание
                 </div>
             </div>
         );
@@ -53,15 +57,12 @@ class Genarator extends React.Component {
     }
 
     updateText() {
-        // const url =
-        //     'https://new-year-2018-backend.herokuapp.com/phrase/generated';
+        const url = '/phrase/generated';
 
-        // axios.get(url).then(res => {
-        //     console.log(res.data);
-        //     const text = res.data;
-        //     this.setState({text});
-        // });
-        this.setState({text: 'Happy New Year!'});
+        axios.get(url).then(res => {
+            const text = res.data.text;
+            this.setState({text});
+        });
     }
 }
 

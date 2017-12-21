@@ -8,6 +8,7 @@ html, body {
 .home {
     height: 100%;
     width: 100%;
+    padding-bottom: 60px;
 
     color: #fff;
 
@@ -15,6 +16,8 @@ html, body {
     background: radial-gradient(farthest-side at 50% 20%, #1F3D95, #700651 230%);
 }
 
-.interaction_board {
-    /* margin-top: 800px; */
+.content {
+    width: 850px;
+    min-width: 320px;
+    margin: 0 auto;
 }
