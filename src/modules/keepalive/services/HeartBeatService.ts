@@ -12,7 +12,7 @@ class HeartBeatService {
 
     private static async beat(): Promise<void> {
         console.log('Heartbeat');
-        await http.get(`http://${APP_NAME}.herokuapp.com/heartbeat`);
+        await http.get(`https://${APP_NAME}.herokuapp.com/heartbeat`);
     }
 }
 

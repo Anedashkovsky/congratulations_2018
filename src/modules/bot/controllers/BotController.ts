@@ -10,10 +10,12 @@ import {BotReplyView} from '../views/BotReplyView';
 
 const PHRASE_WITH_PROMOTION_NUMBER = 4;
 
+const GENERATE_PHRASE_COMMAND = 'Рубануть!';
+
 class BotController {
     public getGreeterMessage(context: any): void {
         const message = BotService.getGreetMessage();
-        const keyboard = Markup.keyboard(['/get'])
+        const keyboard = Markup.keyboard(['GENERATE_PHRASE_COMMAND'])
             .resize()
             .extra();
         return context.reply(message, keyboard);
@@ -34,4 +36,4 @@ class BotController {
     }
 }
 
-export {BotController};
+export {BotController, GENERATE_PHRASE_COMMAND};
