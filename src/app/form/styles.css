@@ -1,5 +1,8 @@
 .form {
     position: relative;
+
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
 }
 
 .form:after {
@@ -17,18 +20,26 @@
     float: right;
 
     width: calc(50% - 25px);
-
-    font-size: 17px;
 }
 
 .description__title {
     color: #fff;
 
     text-decoration: none;
+
+    font-size: 30px;
 }
 
 .description__text {
+    padding-top: 10px;
+}
+
+.description__part {
     margin-top: 40px;
+}
+
+.interaction {
+    margin-top: 65px;
 }
 
 .textarea {
@@ -44,7 +55,8 @@
     background-color: #2335ab;
     border: 1px solid #f0a4c8;
 
-    font-size: 17px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
 }
 
 .textarea:active, .textarea:hover, .textarea:focus {

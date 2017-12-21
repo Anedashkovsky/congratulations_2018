@@ -42,8 +42,12 @@ class Form extends React.Component {
                     @samyiPrazdnichnyiBot
                 </a>
                 <div className={styles.description__text}>
-                    {descriptionTextPart1}<br/>
-                    {descriptionTextPart2}
+                    <div className={styles.description__part}>
+                        {descriptionTextPart1}
+                    </div>
+                    <div className={styles.description__part}>
+                        {descriptionTextPart2}
+                    </div>
                 </div>
             </div>
         );
