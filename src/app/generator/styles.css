@@ -1,0 +1,34 @@
+.generator {
+    width: 800px;
+    height: 850px;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.field {
+    padding-top: 235px;
+    margin-left: -55px;
+
+    font-size: 40px;
+    font-weight: 800;
+
+    transform: rotate(-12deg);
+}
+
+.button {
+    display: inline-block;
+
+    width: 140px;
+    margin-top: 70px;
+}
+
+.button__img {
+    display: inline-block;
+
+    width: 65px;
+}
+
+.button__text {
+    margin-top: 20px;
+}
