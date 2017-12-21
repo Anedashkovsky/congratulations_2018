@@ -9,7 +9,7 @@ import * as bodyParser from 'body-parser';
 expressApp.use(bodyParser.urlencoded({ extended: false }));
 expressApp.use(bodyParser.json());
 
-expressApp.use(Express.static('/', path.join(__dirname, '../../public')));
+expressApp.use('/', Express.static(path.join(__dirname, '../../public')));
 
 import {router as keepaliveRouter, HeartBeatService} from '../../modules/keepalive';
 expressApp.use('/', keepaliveRouter);
