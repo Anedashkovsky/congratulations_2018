@@ -2,6 +2,7 @@
  * @fileoverview View for bot answers
  */
 import {PhraseType, Phrase} from '../../phrase'
+import {Utils} from '../../common/services/Utils';
 
 interface RenderCongratulationParams {
     addLandingPromotion?: boolean;
@@ -38,8 +39,7 @@ class BotReplyView {
     }
 
     private static getlandingPromotionMessage(): string {
-        return `adreslendo.sa\n` +
-            `Заходи на нашу новогоднюю страничку, чтобы получить больше пожеланий! ` +
+        return `Заходи на нашу новогоднюю страничку ${Utils.buildAppurl()}, чтобы получить больше пожеланий! ` +
             `Там же ты можешь оставить и своё пожелание, а бот пришлёт его кому-нибудь из компании`;
     }
 }

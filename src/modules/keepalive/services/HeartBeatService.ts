@@ -2,8 +2,9 @@
  * @fileoverview Heart beat service
  */
 import * as http from 'http';
-const APP_NAME = process.env.HEROKU_APP_NAME;
 const DELAY_INTERVAL = 1000 * 60 * 10; // 10 minutes
+
+import {Utils} from '../../common/services/Utils';
 
 class HeartBeatService {
     public static useHeartBeatFunction(): void {
@@ -12,7 +13,7 @@ class HeartBeatService {
 
     private static async beat(): Promise<void> {
         console.log('Heartbeat');
-        await http.get(`https://${APP_NAME}.herokuapp.com/heartbeat`);
+        await http.get(`${Utils.buildAppurl()}/heartbeat`);
     }
 }
 

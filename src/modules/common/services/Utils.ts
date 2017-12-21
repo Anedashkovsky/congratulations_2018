@@ -1,6 +1,8 @@
 /**
  * @fileoverview Utils services
  */
+const APP_NAME = process.env.HEROKU_APP_NAME;
+
 class Utils {
     public static countDaysBetween(startDate: Date, endDate: Date): number {
         const DAY_LENGTH_MILISECONDS = 1000 * 60 * 60 * 24;
@@ -11,6 +13,10 @@ class Utils {
         const difference = Math.abs(endDateMiliseconds - startDateMiliseconds);
 
         return Math.round(difference/DAY_LENGTH_MILISECONDS);
+    }
+
+    public static buildAppurl(): string {
+        return `https://${APP_NAME}.herokuapp.com`;
     }
 }
 

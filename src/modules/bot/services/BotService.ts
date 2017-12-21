@@ -3,8 +3,6 @@
  */
 import {Utils} from '../../common/services/Utils';
 
-const APP_NAME = process.env.APP_NAME;
-
 class BotService {
     public static getGreetMessage(): string {
         const todayDate = new Date();
@@ -18,7 +16,7 @@ class BotService {
         return `Привет!\n` +
             `До нового года осталось ${daysToNewYear} дней!\n` +
             `Если тебе самому есть, чего пожелать коллегам, `+
-            ` переходи на лендинг https://${APP_NAME}.herokuapp.com и оставляй своё пожелание.\n` +
+            ` переходи на лендинг ${Utils.buildAppurl()} и оставляй своё пожелание.\n` +
             `Будь уверен, что кто-нибудь его обязательно получит.`;
     }
 }
