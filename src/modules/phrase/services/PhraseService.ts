@@ -41,10 +41,6 @@ class PhraseService {
     private static async getPhrasesCount(): Promise<number> {
         return Phrase.count({}).exec();
     }
-
-    private static getPhraseBeginning(): string {
-        return 'Желаем Вам';
-    }
 }
 
 export {PhraseService, PhraseAttributes};
