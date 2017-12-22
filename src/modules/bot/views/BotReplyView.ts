@@ -18,7 +18,7 @@ class BotReplyView {
         }
 
         if (params.addLandingPromotion) {
-            result += `\n${BotReplyView.getlandingPromotionMessage()}`
+            result += `\n\n${BotReplyView.getlandingPromotionMessage()}`
         }
 
         return result;
@@ -29,7 +29,7 @@ class BotReplyView {
         if (phrase.author) {
             headerText = `${phrase.author} поздравляет тебя:`
         } else {
-            headerText = `Некто, пожелавший остаться анонимным, в поздравляет тебя с Новым годом:`
+            headerText = `Некто, пожелавший остаться анонимным, поздравляет тебя с Новым годом:`
         }
         return `${headerText}\n${phrase.text}`;
     }
