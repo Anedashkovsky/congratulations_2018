@@ -24,7 +24,7 @@ class PhraseService {
         return Phrase.create(data);
     }
 
-    private static async generateRandomPhrase(): Promise<PhraseAttributes> {
+    public static async generateRandomPhrase(): Promise<PhraseAttributes> {
         const phraseWords = await WordService.getrandomWords();
         const {adjective, noun, verb} = phraseWords;
         const text = `${verb.text} ${adjective.text} ${noun.text}`;
