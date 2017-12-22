@@ -9,7 +9,9 @@ class Genarator extends React.Component {
         super(props)
 
         this.state = {
-            text: ''
+            text: '',
+            isFieldAnimated: false,
+            isButtonAnimated: false
         };
     }
 
@@ -30,20 +32,57 @@ class Genarator extends React.Component {
     }
 
     renderTextField() {
+        const plaseholder = this.renderFieldPlaceholder();
+
+        const className = `${styles.field} ` +
+            (this.state.isFieldAnimated ? styles.field_animated : '');
+
         return (
-            <div className={styles.field}>
-                Желаем в Новом году {this.state.text}
+            <div className={className}
+                onAnimationEnd={this.onFieldAnimationEnd.bind(this)}>
+
+                    <div className={styles.field__text}>
+                        Желаем в Новом году
+                    </div>
+
+                    <div className={styles.field__generator}>
+                        <div className={`${styles.field__text} ${styles.field__text_generated}`}>
+                            {this.state.text}
+                        </div>
+                        {plaseholder}
+                    </div>
+            </div>
+        );
+    }
+
+    renderFieldPlaceholder() {
+        return (
+            <div className={styles.field__placeholder}>
+                <div>С наступающим</div>
+                <div>С Новым 2018 годом</div>
+                <div>Поздравляем</div>
+                <div>С Праздником</div>
+                <div>Желаем в наступающем</div>
+                <div>Поздравляем с праздником</div>
+                <div>Желаем в Новом году</div>
             </div>
         );
     }
 
     renderButton() {
-        return (
-            <div className={styles.button}
-                onClick={this.onButtonClick.bind(this)}>
+        const className = `${styles.button} ` +
+            (this.state.isButtonAnimated ? styles.button_animated : '');
 
-                <div className={styles.button__img__string}></div>
-                <img className={styles.button__img} src={ball}/>
+        return (
+            <div className={className}
+                onClick={this.onButtonClick.bind(this)}
+                onAnimationEnd={this.onButtonAnimationEnd.bind(this)}>
+
+                <div className={styles.button__img}>
+                    <div className={styles.button__img__string}></div>
+                    <img className={styles.button__img__ball} src={ball}/>
+                </div>
+
                 <div className={styles.button__text}>
                     сгенерировать новое пожелание
                 </div>
@@ -52,7 +91,18 @@ class Genarator extends React.Component {
     }
 
     onButtonClick() {
+        this.setState({isButtonAnimated: true});
+
+        this.setState({isFieldAnimated: true});
         this.updateText();
+    }
+
+    onFieldAnimationEnd() {
+        this.setState({isFieldAnimated: false});
+    }
+
+    onButtonAnimationEnd() {
+        this.setState({isButtonAnimated: false});
     }
 
     updateText() {

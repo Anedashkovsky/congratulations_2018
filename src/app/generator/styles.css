@@ -3,11 +3,48 @@
 }
 
 .field {
+    position: relative;
+    z-index: 5;
+
+    height: 250px;
+
     transform: rotate(-12deg);
 
     font-family: 'Caveat', cursive;
     font-weight: 800;
 }
+
+.field__generator{
+    position: relative;
+
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.field__text {
+    white-space: normal;
+}
+
+.field__placeholder {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: -650px;
+}
+
+.field_animated .field__text_generated {
+    visibility: hidden;
+}
+
+.field_animated .field__placeholder {
+    animation: moveTopToBottom 0.1s linear 0.2ms 2;
+}
+
+@keyframes moveTopToBottom {
+    0%   { top: -650px; }
+    100% { top: 350px; }
+}
+
 
 .button {
     position: relative;
@@ -15,6 +52,7 @@
     display: inline-block;
 
     width: 140px;
+    height: 145px;
     margin-top: 70px;
 
     cursor: pointer;
@@ -24,27 +62,94 @@
 
 .button__img__string {
     position: absolute;
-    /* right: 0;
+    right: 0;
     left: 0;
-    bottom: 100%;
+    bottom: 99%;
 
     width: 2px;
-    height: 340px;
+    height: 280px;
     margin: 0 auto;
 
-    background: #be3c63; */
+    background-image: linear-gradient(to top, #be3c63, transparent 100%);
 }
 
 .button__img {
-    display: inline-block;
+    position: relative;
+
+    z-index: 3;
+}
+
+.button__img__ball {
+    position: absolute;
+    right: 0;
+    left: 0;
 
     width: 65px;
+    margin: 0 auto;
 }
 
 .button__text {
+    position: absolute;
+    bottom: 0;
+
     margin-top: 20px;
 
     font-family: 'Roboto Slab', serif;
     font-size: 15px;
+}
+
+.button_animated .button__img {
+    animation: fastMoveTop 0.5s ease 0ms 1;
+}
+
+.button_animated .button__img__string {
+    animation: fastHeightResize 0.5s ease 0ms 1;
+}
+
+@keyframes fastMoveTop {
+    0% { top: -15px; }
+    50% { top: 100px; }
+    100% { top: -5px; }
+}
+
+@keyframes fastHeightResize {
+    0% { height: 295px; }
+    50% { height: 380px; }
+    100% { height: 285px; }
+}
+
+
+@media (max-width: 980px) {
+    .home {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .home__content {
+        width: 100%;
+    }
+
+    .tree__img_right {
+        right: auto;
+        left: 642px;
+    }
+
+    .tree__img_left {
+        left: auto;
+        right: 642px;
+    }
+}
+
+@media (max-width: 660px) {
+    .field {
+        height: 180px;
+    }
+}
+
+@media (max-width: 400px) {
+    .field {
+        height: auto;
+        min-height: 150px;
+    }
 }
 
