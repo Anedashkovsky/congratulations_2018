@@ -22,7 +22,7 @@ class Home extends React.Component {
             <div className={styles.home}>
                 {background}
 
-                <div className={styles.content}>
+                <div className={styles.home__content}>
                     {generator}
                     {form}
                 </div>
@@ -32,7 +32,7 @@ class Home extends React.Component {
 
     renderGenerator() {
         return (
-            <div className={styles.generator}>
+            <div className={styles.home__generator}>
                 <Generator />
             </div>
         );
@@ -40,7 +40,7 @@ class Home extends React.Component {
 
     renderForm() {
         return (
-            <div className={styles.form}>
+            <div className={styles.home__form}>
                 <Form />
             </div>
         );
@@ -48,7 +48,7 @@ class Home extends React.Component {
 
     renderBackground() {
         return (
-            <div className={styles.background}>
+            <div className={styles.home__background}>
                 <img className={styles.garland__img_top} src={topGarland}/>
                 <img className={styles.garland__img_bottom} src={mainGarland}/>
 

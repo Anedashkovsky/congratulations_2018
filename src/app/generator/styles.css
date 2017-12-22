@@ -1,17 +1,11 @@
 .generator {
-    height: 850px;
-
     text-align: center;
 }
 
 .field {
-    padding: 235px 180px 0;
-    margin-left: -85px;
-
     transform: rotate(-12deg);
 
     font-family: 'Caveat', cursive;
-    font-size: 70px;
     font-weight: 800;
 }
 
@@ -20,6 +14,8 @@
 
     width: 140px;
     margin-top: 70px;
+
+    cursor: pointer;
 
     font-size: 17px;
 }
@@ -36,3 +32,4 @@
     font-family: 'Roboto Slab', serif;
     font-size: 15px;
 }
+

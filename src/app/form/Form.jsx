@@ -28,8 +28,8 @@ class Form extends React.Component {
 
         return (
             <div className={styles.form}>
-                {interaction}
                 {description}
+                {interaction}
             </div>
         );
     }
