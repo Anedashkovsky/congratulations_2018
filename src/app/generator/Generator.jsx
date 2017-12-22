@@ -42,6 +42,7 @@ class Genarator extends React.Component {
             <div className={styles.button}
                 onClick={this.onButtonClick.bind(this)}>
 
+                <div className={styles.button__img__string}></div>
                 <img className={styles.button__img} src={ball}/>
                 <div className={styles.button__text}>
                     сгенерировать новое пожелание

@@ -54,35 +54,36 @@ class Form extends React.Component {
     }
 
     renderInteraction() {
-        const congratulationTextarea = this.renderCongratulationTextarea();
-        const senderNameTextarea = this.renderAuthorTextarea();
+        const congratulationField = this.renderCongratulationField();
+        const autorField = this.renderAuthorField();
         const button = this.renderButton();
 
         return (
-            <form className={styles.interaction}>
-                {congratulationTextarea}
-                {senderNameTextarea}
+            <div className={styles.interaction}>
+                {congratulationField}
+                {autorField}
                 {button}
-            </form>
+            </div>
         );
     }
 
-    renderCongratulationTextarea() {
+    renderCongratulationField() {
         return (
-            <textarea className={`${styles.textarea} ${styles.textarea_congratulation}`}
+            <textarea className={`${styles.input__field} ${styles.input__field_congratulation}`}
                 value={this.state.text}
                 placeholder="Пожелание"
                 onChange={this.onCongratulationChange.bind(this)}/>
         )
     }
 
-    renderAuthorTextarea() {
+    renderAuthorField() {
         return (
-            <textarea className={`${styles.textarea} ${styles.textarea_author}`}
+            <input className={`${styles.input__field} ${styles.input__field_author}`}
                 value={this.state.author}
                 placeholder="Твоя подпись"
                 maxLength="30"
-                onChange={this.onAuthorChange.bind(this)}/>
+                onChange={this.onAuthorChange.bind(this)}
+                onKeyPress={this.onInputAuthorKeyPress.bind(this)}/>
         );
     }
 
@@ -97,13 +98,15 @@ class Form extends React.Component {
     }
 
     onButtonClick() {
-        axios({
-            method: 'post',
-            url: '/phrase',
-            data: this.state
-        }).then(res => {
-            this.setState({});;
-        });
+        this.sendCongratulations();
+    }
+
+    onInputAuthorKeyPress(event) {
+        const keyKode = event.keyCode || event.charCode;
+
+        if (keyKode == 13) {
+            this.sendCongratulations();
+        }
     }
 
     onCongratulationChange(event) {
@@ -120,6 +123,23 @@ class Form extends React.Component {
         });
 
         this.setState(state);
+    }
+
+    sendCongratulations() {
+        const that = this;
+
+        if (this.state.text) {
+            axios({
+                method: 'post',
+                url: '/phrase',
+                data: this.state
+            }).then(res => {
+                that.setState({
+                    text: '',
+                    author: ''
+                });
+            });
+        }
     }
 }
 

@@ -10,6 +10,8 @@
 }
 
 .button {
+    position: relative;
+
     display: inline-block;
 
     width: 140px;
@@ -18,6 +20,19 @@
     cursor: pointer;
 
     font-size: 17px;
+}
+
+.button__img__string {
+    position: absolute;
+    /* right: 0;
+    left: 0;
+    bottom: 100%;
+
+    width: 2px;
+    height: 340px;
+    margin: 0 auto;
+
+    background: #be3c63; */
 }
 
 .button__img {
