@@ -1,7 +1,7 @@
 /**
  * @fileoverview Utils services
  */
-const APP_NAME = process.env.HEROKU_APP_NAME;
+const APP_NAME = process.env.APP_NAME;
 
 class Utils {
     public static countDaysBetween(startDate: Date, endDate: Date): number {
